@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Midnight Status — Dashboard</title>
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body class="dark">
+<header class="topbar">
+  <h1>Midnight Status</h1>
+  <div class="meta">
+    <span id="lastSync">Last sync: —</span>
+    <button id="themeToggle" aria-label="Toggle theme">☼</button>
+    <button id="exportCSV" title="Export data">⤓</button>
+  </div>
+</header>
+
+<nav class="tabs">
+  <button class="tab active" data-tab="profile">Profile</button>
+  <button class="tab" data-tab="skills">Skills</button>
+  <button class="tab" data-tab="radar">Radar</button>
+</nav>
+
+<main class="container">
+  <!-- PROFILE -->
+  <section class="tabcontent" id="profile" data-visible>
+    <div class="profile-grid">
+      <div class="left">
+        <div class="avatar">
+          <div class="avatar-circle">U</div>
+          <div class="level-badge">Lvl <span id="level">0</span></div>
+          <div class="title">Novice</div>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="xp-wrap">
+          <div class="xp-head">
+            <span>XP</span>
+            <span id="xpText">0 / 100</span>
+          </div>
+          <div class="xp-bar">
+            <div id="xpFill" class="xp-fill"></div>
+          </div>
+        </div>
+
+        <div class="streak">
+          <strong id="streak">0</strong>
+          <div>Daily streak</div>
+        </div>
+
+        <div class="achievements" id="achievements">
+          <!-- badges inserted here -->
+        </div>
+      </div>
+    </div>
+
+    <div class="mini-proficiency">
+      <h3>Proficiency snapshot</h3>
+      <div id="miniBars" class="mini-bars"></div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="tabcontent" id="skills" aria-hidden>
+    <h2>Skill Stats</h2>
+    <div class="skills-list" id="skillsList">
+      <!-- inserted by JS -->
+    </div>
+
+    <div class="notes">
+      <h4>Notes</h4>
+      <textarea id="notes" placeholder="Quick observations..."></textarea>
+    </div>
+  </section>
+
+  <!-- RADAR -->
+  <section class="tabcontent" id="radar" aria-hidden>
+    <h2>Radar Window</h2>
+    <div class="radar-wrap">
+      <!-- Use the local radar file as a quick test embed -->
+      <iframe id="radarFrame" src="/mnt/data/index.html" title="Radar" frameborder="0"></iframe>
+      <div class="radar-controls">
+        <label><input type="checkbox" id="smoothToggle"> Smooth polygon</label>
+        <button id="refreshBtn">Refresh</button>
+      </div>
+    </div>
+
+    <div class="radar-url">
+      <small>Example query string format:</small>
+      <code id="exampleUrl">?level=5&xp=30&maths=90&physics=80&ioc=75&oc=60&pc=55</code>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div>Embed this page in Notion using the GitHub Pages URL.</div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
