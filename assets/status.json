@@ -1,12 +1,12 @@
 {
-  "level": 3,
-  "xp": 42,
-  "streak": 4,
-  "achievements": ["First Task","Quick Win"],
-  "maths": 88,
-  "physics": 72,
-  "ioc": 76,
-  "oc": 65,
-  "pc": 58,
-  "lastSync": "2025-11-21T14:00:00.000Z"
+    "level": 1,
+    "xp": 40,
+    "streak": 0,
+    "proficiency": {
+        "maths": 70,
+        "physics": 60,
+        "oc": 55,
+        "pc": 65,
+        "ioc": 72
+    }
 }
